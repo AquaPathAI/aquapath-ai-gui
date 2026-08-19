@@ -1,0 +1,27 @@
+Start,End,Traffic_Density
+Mumbai,Aden,85
+Mumbai,Dubai,95
+Mumbai,Singapore,70
+Mumbai,Cape Town,25
+Aden,Suez,90
+Suez,Gibraltar,88
+Gibraltar,Rotterdam,92
+Rotterdam,New York,60
+Singapore,Tokyo,75
+Tokyo,Los Angeles,45
+Shanghai,Singapore,80
+Shanghai,Tokyo,60
+Shanghai,Los Angeles,50
+Tokyo,Panama Canal,55
+Rotterdam,Hamburg,40
+Hamburg,New York,35
+New York,Panama Canal,65
+New York,Santos,40
+Cape Town,Santos,30
+Los Angeles,Panama Canal,70
+Panama Canal,Santos,45
+Gibraltar,Cape Town,40
+Dubai,Aden,85
+Singapore,Los Angeles,40
+Aden,Cape Town,35
+Gibraltar,New York,55

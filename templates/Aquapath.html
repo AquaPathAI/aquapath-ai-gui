@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AquaPath AI</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo-title">
+            <h1>AquaPath AI</h1>
+            <img src="{{ url_for('static', filename='aquapath_don-removebg-preview.png') }}"
+                 alt="AquaPath AI logo">
+        </div>
+
+        <nav class="navigation">
+            <a class="info" href="{{ url_for('about_us') }}" title="About the creators">
+                About Us
+            </a>
+
+            <a class="info" href="{{ url_for('how_it_works') }}" title="Working of AquaPath AI">
+                How the AI Works
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Explains the web version of AquaPath before users choose ports. -->
+        <div class="intro-box">
+            <h3>
+                AquaPath AI is a Flask web application that helps compare global maritime
+                shipping routes. Select two ports to let the Python route calculator explore
+                connected paths, check live weather and marine conditions, review local traffic
+                data, and rank the three strongest route options.
+            </h3>
+            <p>Built with Flask, Python, JavaScript, HTML, CSS, and a canvas-based world-map overlay.</p>
+        </div>
+
+        <div class="port-grid">
+            <!-- data-port keeps the exact Python port name while the flag is shown to users. -->
+            <button class="port-button" data-port="Mumbai">Mumbai <span>🇮🇳</span></button>
+            <button class="port-button" data-port="Aden">Aden <span>🇾🇪</span></button>
+            <button class="port-button" data-port="Dubai">Dubai <span>🇦🇪</span></button>
+            <button class="port-button" data-port="Singapore">Singapore <span>🇸🇬</span></button>
+            <button class="port-button" data-port="Cape Town">Cape Town <span>🇿🇦</span></button>
+            <button class="port-button" data-port="Shanghai">Shanghai <span>🇨🇳</span></button>
+            <button class="port-button" data-port="Tokyo">Tokyo <span>🇯🇵</span></button>
+            <button class="port-button" data-port="Suez">Suez <span>🇪🇬</span></button>
+            <button class="port-button" data-port="Gibraltar">Gibraltar <span>🇬🇮</span></button>
+            <button class="port-button" data-port="Rotterdam">Rotterdam <span>🇳🇱</span></button>
+            <button class="port-button" data-port="Hamburg">Hamburg <span>🇩🇪</span></button>
+            <button class="port-button" data-port="New York">New York <span>🇺🇸</span></button>
+            <button class="port-button" data-port="Los Angeles">Los Angeles <span>🇺🇸</span></button>
+            <button class="port-button" data-port="Panama Canal">Panama Canal <span>🇵🇦</span></button>
+            <button class="port-button" data-port="Santos">Santos <span>🇧🇷</span></button>
+        </div>
+
+        <div class="input-container">
+            <button id="input" type="button">Choose a start port</button>
+        </div>
+
+        <div id="loading-screen">
+            <div class="spinner" role="status" aria-label="Calculating route"></div>
+            <h2>Calculating optimal route...</h2>
+        </div>
+
+        <!-- JavaScript fills this section after Flask returns the calculated routes. -->
+        <section id="route-results" hidden>
+            <h2>Top three optimal routes</h2>
+            <p class="route-results-intro">Routes are ranked by their calculated safety score, then distance.</p>
+            <div id="route-list" class="route-list"></div>
+
+            <div class="map-container route-map">
+                <h3 class="map-heading">Route comparison map</h3>
+                <img id="world-map"
+                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/BlankMap-Equirectangular.svg/3840px-BlankMap-Equirectangular.svg.png"
+                     alt="Equirectangular world map showing global shipping routes">
+                <canvas id="route-canvas" aria-label="Map of the three calculated routes"></canvas>
+            </div>
+
+            <div class="route-legend" aria-label="Route map legend">
+                <span><i class="route-swatch route-one"></i> Route 1</span>
+                <span><i class="route-swatch route-two"></i> Route 2</span>
+                <span><i class="route-swatch route-three"></i> Route 3</span>
+                <span><i class="port-swatch"></i> Port</span>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

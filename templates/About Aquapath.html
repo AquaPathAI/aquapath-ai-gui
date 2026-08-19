@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How AquaPath AI Works</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+</head>
+<body class="about-page">
+    <!-- This page explains the website's real technologies and calculation flow. -->
+    <main class="about-content">
+        <p class="about-kicker">AquaPath AI</p>
+        <h1>How the AI works</h1>
+        <p class="about-lead">
+            AquaPath turns a pair of selected ports into clear route comparisons for a safer,
+            more informed shipping decision.
+        </p>
+
+        <section class="feature-stack">
+            <article class="feature-card">
+                <span class="feature-icon" aria-hidden="true">🌐</span>
+                <h2>01 · Flask web connection</h2>
+                <p>Flask serves the website and receives the selected start and end ports through a route-calculation API request.</p>
+            </article>
+
+            <article class="feature-card">
+                <span class="feature-icon" aria-hidden="true">🧭</span>
+                <h2>02 · Pathfinding</h2>
+                <p>Python uses depth-first search to discover connected shipping paths, then keeps the three shortest candidates for evaluation.</p>
+            </article>
+
+            <article class="feature-card">
+                <span class="feature-icon" aria-hidden="true">🌊</span>
+                <h2>03 · Weather and traffic</h2>
+                <p>Live wind and wave information is combined with local CSV traffic data to evaluate conditions along each candidate route.</p>
+            </article>
+
+            <article class="feature-card">
+                <span class="feature-icon" aria-hidden="true">🧠</span>
+                <h2>04 · Risk scoring</h2>
+                <p>The scoring model weighs weather risk at 65% and traffic risk at 35%, producing a warning level from 0.00 to 5.00.</p>
+            </article>
+
+            <article class="feature-card">
+                <span class="feature-icon" aria-hidden="true">🗺️</span>
+                <h2>05 · JavaScript route map</h2>
+                <p>JavaScript displays the returned results and draws port points and route paths on a world-map image using a canvas overlay.</p>
+            </article>
+
+            <article class="feature-card">
+                <span class="feature-icon" aria-hidden="true">🏆</span>
+                <h2>06 · Three ranked options</h2>
+                <p>The site presents the three evaluated routes with their scores and highlights the strongest route first.</p>
+            </article>
+        </section>
+
+        <a class="back-link" href="{{ url_for('home') }}">← Back to AquaPath AI</a>
+    </main>
+</body>
+</html>
