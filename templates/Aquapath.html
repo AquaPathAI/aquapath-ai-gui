@@ -6,42 +6,28 @@
 
     <title>AquaPath AI</title>
 
+    <!-- Icon -->
+     <link rel="icon" href="{{ url_for('static', filename='logo.png') }}" type="image/png">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <script src="{{ url_for('static', filename='script.js') }}" defer></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-          rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header class="header">
         <div class="logo-title">
             <h1>AquaPath AI</h1>
-            <img src="{{ url_for('static', filename='aquapath_don-removebg-preview.png') }}"
+            <img src="{{ url_for('static', filename='logo_nobg.png') }}"
                  alt="AquaPath AI logo">
         </div>
-
-        <nav class="navigation">
-            <a class="info" href="{{ url_for('about_us') }}" title="About the creators">
-                About Us
-            </a>
-
-            <a class="info" href="{{ url_for('how_it_works') }}" title="Working of AquaPath AI">
-                How the AI Works
-            </a>
-        </nav>
     </header>
 
-    <main>
-        <!-- Explains the web version of AquaPath before users choose ports. -->
-        <div class="intro-box">
-            <h3>
-                AquaPath AI is a Flask web application that helps compare global maritime
-                shipping routes. Select two ports to let the Python route calculator explore
-                connected paths, check live weather and marine conditions, review local traffic
-                data, and rank the three strongest route options.
-            </h3>
-            <p>Built with Flask, Python, JavaScript, HTML, CSS, and a canvas-based world-map overlay.</p>
-        </div>
+    <main>       
 
         <div class="port-grid">
             <!-- data-port keeps the exact Python port name while the flag is shown to users. -->
@@ -93,5 +79,18 @@
             </div>
         </section>
     </main>
+
+
+    <footer>
+        <div class="intro-box">
+            <h3>
+                AquaPath AI is a Flask web application that helps compare global maritime
+                shipping routes. Select two ports to let the Python route calculator explore
+                connected paths, check live weather and marine conditions, review local traffic
+                data, and rank the three strongest route options.
+            </h3>
+            <p>Built with Flask, Python, JavaScript, HTML, CSS, and a canvas-based world-map overlay.</p>
+        </div> 
+    </footer>
 </body>
 </html>

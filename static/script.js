@@ -1,3 +1,4 @@
+// Pull DOM elements for later use.
 const ports = document.querySelectorAll(".port-button");
 const inputButton = document.getElementById("input");
 const portGrid = document.querySelector(".port-grid");
@@ -8,10 +9,12 @@ const routeList = document.getElementById("route-list");
 const worldMap = document.getElementById("world-map");
 const routeCanvas = document.getElementById("route-canvas");
 
+// Variables to track the selected ports and the current stage of the input process.
 let selectedPort = null;
 let startPort = null;
 let endPort = null;
 
+// Returns the port name from the data-port attribute of the clicked button.
 function getPortName(port) {
     // data-port avoids sending visual flag emojis to the Python route calculator.
     return port.dataset.port;

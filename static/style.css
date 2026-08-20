@@ -9,7 +9,7 @@ ul {
 body {
     background-color: rgb(16, 2, 54);
     margin: 0;
-    font-family: "Poppins", sans-serif;
+    font-family: "Inter", sans-serif;
     color: white;
     padding-bottom: 60px;
 }
@@ -34,7 +34,7 @@ body {
 
 .logo-title h1 {
     margin: 0;
-    font-family: "Poppins", sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     font-size: 60px;
     font-weight: 700;
     color: white;
@@ -52,7 +52,7 @@ body {
    ========================= */
 
 h2 {
-    font-family: "Poppins", sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     font-size: 30px;
     text-align: center;
     color: white;
@@ -68,7 +68,7 @@ h2 {
 }
 
 .info {
-    font-family: "Poppins", sans-serif;
+    font-family: "Inter", sans-serif;
     color: white; 
     text-decoration: none;
     margin: 0 15px;
