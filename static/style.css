@@ -7,9 +7,9 @@ ul {
 }
 
 body {
-    background-color: rgb(16, 2, 54);
+    background-color: rgb(25, 37, 48);
     margin: 0;
-    font-family: "Inter", sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     color: white;
     padding-bottom: 60px;
 }
@@ -68,7 +68,7 @@ h2 {
 }
 
 .info {
-    font-family: "Inter", sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     color: white; 
     text-decoration: none;
     margin: 0 15px;
@@ -243,107 +243,6 @@ h2 {
     transform: scale(1.04);
 }
 
-/* =========================
-   HOW THE AI WORKS PAGE
-   Each feature card rises into view after the page loads.
-   ========================= */
-
-.about-page {
-    min-height: 100vh;
-    background:
-        radial-gradient(circle at top, rgba(65, 232, 255, 0.18), transparent 38%),
-        rgb(16, 2, 54);
-}
-
-.about-content {
-    width: min(1100px, 90%);
-    margin: 0 auto;
-    padding: 70px 0;
-    text-align: center;
-}
-
-.about-kicker {
-    margin: 0;
-    color: #42e8ff;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.about-content h1 {
-    margin: 8px 0 12px;
-    font-size: clamp(38px, 6vw, 64px);
-}
-
-.about-lead {
-    max-width: 720px;
-    margin: 0 auto 42px;
-    color: rgba(255, 255, 255, 0.84);
-    font-size: 18px;
-}
-
-.feature-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    max-width: 880px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-.feature-card {
-    display: grid;
-    grid-template-columns: 66px 1fr;
-    column-gap: 20px;
-    align-items: start;
-    padding: 24px;
-    border: 1px solid rgba(158, 238, 255, 0.24);
-    border-radius: 16px;
-    background: rgba(38, 4, 131, 0.78);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-    opacity: 0;
-    transform: translateY(22px);
-    animation: feature-enter 0.6s ease-out forwards;
-}
-
-.feature-card:nth-child(2) { animation-delay: 0.08s; }
-.feature-card:nth-child(3) { animation-delay: 0.16s; }
-.feature-card:nth-child(4) { animation-delay: 0.24s; }
-.feature-card:nth-child(5) { animation-delay: 0.32s; }
-.feature-card:nth-child(6) { animation-delay: 0.40s; }
-
-.feature-icon {
-    display: grid;
-    place-items: center;
-    width: 58px;
-    height: 58px;
-    border-radius: 14px;
-    background: rgba(66, 232, 255, 0.14);
-    font-size: 30px;
-}
-
-.feature-card h2 {
-    margin: 2px 0 10px;
-    font-size: 25px;
-    text-align: left;
-}
-
-.feature-card p {
-    grid-column: 2;
-    margin: -4px 0 0;
-    color: rgba(255, 255, 255, 0.82);
-    font-size: 17px;
-    line-height: 1.65;
-}
-
-@keyframes feature-enter {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 
 /* =========================
    INFORMATION BOX
@@ -373,14 +272,16 @@ h2 {
    INTRO BOX
    ========================= */
 
+footer {
+    text-align: center;
+    margin-top: 20px;
+    background: rgb(42, 9, 140);
+}
+
 .intro-box {
-    margin: 30px auto;
-    width: 75%;
+    margin: 50px auto;
+    width: 100%;
     padding: 20px;
-    background-color:rgb(38, 4, 131);
-    border-radius: 15px;
- 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 
     box-sizing: border-box;
 }
@@ -460,7 +361,7 @@ h2 {
 
     color: white;
 
-    font-family: "Poppins", sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     font-size: 14px;
 
     cursor: pointer;
@@ -525,7 +426,7 @@ h2 {
     border: none;
     border-radius: 10px;
 
-    font-family: "Poppins", sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     font-size: 16px;
     font-weight: 500;
 
@@ -543,7 +444,7 @@ h2 {
 }
 
 #input {
-    font-family: "Poppins", sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     font-size: 20px;
     font-weight: 600;
 }
@@ -559,7 +460,7 @@ h2 {
 
     color: white;
 
-    font-family: "Poppins", sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     font-size: 14px;
 
     cursor: pointer;
@@ -620,6 +521,10 @@ h2 {
 
     animation: spin 1s linear infinite;
 }
+
+/* =========================
+   ANIMATIONS
+   ========================= */
 @keyframes spin {
 
     from {
