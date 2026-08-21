@@ -1,10 +1,11 @@
-import csv
-import requests
-
 # This file contains only the reusable Python route-calculation logic.
 # Flask imports calculate_route() when the website receives a route request.
 
+# IMPORTS
+import csv
+import requests
 
+# CONSTANTS
 PORT_COORDINATES = {
     # --- ASIA & MIDDLE EAST ---
     "Mumbai": (18.94, 72.83), "Singapore": (1.29, 103.85),
@@ -46,7 +47,7 @@ MARITIME_NETWORK = {
     "Santos": {"Cape Town": 3300, "Panama Canal": 3400, "New York": 4800}
 }
 
-
+# PATHFINDING ALGORITHM (Depth-First Search)
 def find_all_paths(graph, start, end, path=None):
     # Finds all possible routes between the start and end ports without looping.
     # Args:
@@ -96,7 +97,7 @@ def find_all_paths(graph, start, end, path=None):
                 paths.append(newpath)
     return paths
 
-
+# PATH DISTANCE CALCULATION
 def calculate_total_distance(path):
     # Calculates the total nautical miles of a given path.
     # Args:
@@ -117,7 +118,7 @@ def calculate_total_distance(path):
         total_distance += MARITIME_NETWORK[port_a][port_b]
     return total_distance
 
-
+# PATH EVALUATION
 def evaluate_full_path(path):
     # Fetches live weather via APIs and traffic via CSV.
     # Calculates safety risk using our Machine Learning formulas.
