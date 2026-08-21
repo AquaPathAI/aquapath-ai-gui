@@ -2,17 +2,12 @@
    GENERAL PAGE
    ========================= */
 
-ul {
-    color: white;
-}
-
 body {
     background-color: rgb(25, 37, 48);
     margin: 0;
     font-family: "Space Grotesk", sans-serif;
     color: white;
 }
-
 
 /* =========================
    HEADER
@@ -55,26 +50,6 @@ h2 {
     font-size: 30px;
     text-align: center;
     color: white;
-}
-
-
-/* =========================
-   NAVIGATION
-   ========================= */
-
-.navigation {
-    margin-top: 15px;
-}
-
-.info {
-    font-family: "Space Grotesk", sans-serif;
-    color: white; 
-    text-decoration: none;
-    margin: 0 15px;
-}
-
-.info:hover {
-    text-decoration: underline;
 }
 
 
@@ -371,25 +346,19 @@ footer {
    CONFIRM PORT BUTTON
    ========================= */
 
-#input{
+#input {
     display: block;
-
     margin: 30px auto 0;
-
     padding: 12px 20px 15px;
-
     background: rgb(11, 11, 140);
     color: white;
-
     border: none;
     border-radius: 10px;
-
     font-family: "Space Grotesk", sans-serif;
     font-size: 16px;
     font-weight: 500;
 
     cursor: pointer;
-
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease;
@@ -397,7 +366,6 @@ footer {
 
 #input:hover {
     transform: scale(1.05);
-
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
@@ -514,12 +482,6 @@ footer {
         height: 45px;
     }
 
-    .navigation {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
     .port-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -530,25 +492,6 @@ footer {
 
     .route-list {
         grid-template-columns: 1fr;
-    }
-
-    .feature-card {
-        grid-template-columns: 52px 1fr;
-        column-gap: 14px;
-    }
-
-    .feature-icon {
-        width: 46px;
-        height: 46px;
-        font-size: 24px;
-    }
-
-    .feature-card h2 {
-        font-size: 21px;
-    }
-
-    .feature-card p {
-        font-size: 16px;
     }
 }
 

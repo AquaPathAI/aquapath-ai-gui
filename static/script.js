@@ -196,6 +196,7 @@ inputButton.addEventListener("click", async () => {
         }
 
         showRouteResults(result);
+        
     } catch (error) {
         console.error(error);
         loadingScreen.innerHTML = `
