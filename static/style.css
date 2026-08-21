@@ -11,7 +11,6 @@ body {
     margin: 0;
     font-family: "Space Grotesk", sans-serif;
     color: white;
-    padding-bottom: 60px;
 }
 
 
@@ -190,7 +189,7 @@ h2 {
     margin: 0;
     padding: 7px 11px;
     border-radius: 7px;
-    background: rgba(7, 27, 61, 0.88);
+    background: rgba(7, 27, 61, 0.5);
     color: white;
     font-size: 15px;
 }
@@ -228,58 +227,17 @@ h2 {
     background: white;
 }
 
-.back-link {
-    display: inline-block;
-    margin: 30px;
-    padding: 10px 16px;
-    border-radius: 8px;
-    background: rgb(42, 9, 140);
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.back-link:hover {
-    transform: scale(1.04);
-}
-
-
-/* =========================
-   INFORMATION BOX
-   ========================= */
-
-.info-box {
-    padding: 15px 25px;
-    border-radius: 25px;
-
-    background: rgb(51, 11, 164);
-
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 1);
-
-    width: 90%;
-    max-width: 1200px;
-
-    margin: 20px auto;
-
-    color: white;
-    text-align: left;
-
-    box-sizing: border-box;
-}
-
-
 /* =========================
    INTRO BOX
    ========================= */
 
 footer {
     text-align: center;
-    margin-top: 20px;
     background: rgb(42, 9, 140);
 }
 
 .intro-box {
-    margin: 50px auto;
+    margin-top: 50px;
     width: 100%;
     padding: 20px;
 
@@ -418,7 +376,7 @@ footer {
 
     margin: 30px auto 0;
 
-    padding: 12px 25px 25px;
+    padding: 12px 20px 15px;
 
     background: rgb(11, 11, 140);
     color: white;
@@ -537,6 +495,11 @@ footer {
 
 }
 
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 /* =========================
    MOBILE
    ========================= */
@@ -590,7 +553,3 @@ footer {
     }
 }
 
-@keyframes fade-in {
-    from { opacity: 0; transform: translateY(8px); }
-    to { opacity: 1; transform: translateY(0); }
-}
