@@ -10,7 +10,10 @@
     <!-- Icon -->
      <link rel="icon" href="{{ url_for('static', filename='logo.png') }}" type="image/png">
 
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- JavaScript -->
     <script src="{{ url_for('static', filename='script.js') }}" defer></script>
 
     <!-- Google Fonts -->
@@ -21,12 +24,20 @@
 </head>
 
 <body>
-    
+
     <header class="header">
         <div class="logo-title">
             <h1>AquaPath AI</h1>
             <img src="{{ url_for('static', filename='logo.png') }}"
                  alt="AquaPath AI logo">
+        </div>
+
+        <div class="intro-box">
+            <p>
+                Select two ports to let the Python route calculator explore
+                connected paths, check live weather and marine conditions, review local traffic
+                data, and rank the three strongest route options.
+            </p>
         </div>
     </header>
 
@@ -56,7 +67,7 @@
         </div>
 
         <div id="loading-screen">
-            <div class="spinner" role="status" aria-label="Calculating route"></div>
+            <div class="spinner"></div>
             <h2>Calculating optimal route...</h2>
         </div>
 
@@ -71,10 +82,10 @@
                 <img id="world-map"
                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/BlankMap-Equirectangular.svg/3840px-BlankMap-Equirectangular.svg.png"
                      alt="Equirectangular world map showing global shipping routes">
-                <canvas id="route-canvas" aria-label="Map of the three calculated routes"></canvas>
+                <canvas id="route-canvas"></canvas>
             </div>
 
-            <div class="route-legend" aria-label="Route map legend">
+            <div class="route-legend">
                 <span><i class="route-swatch route-one"></i> Route 1</span>
                 <span><i class="route-swatch route-two"></i> Route 2</span>
                 <span><i class="route-swatch route-three"></i> Route 3</span>
@@ -84,14 +95,15 @@
     </main>
 
 
-    <footer class="intro-box">
-        <h3>
-            AquaPath AI is a Flask web application that helps compare global maritime
-            shipping routes. Select two ports to let the Python route calculator explore
-            connected paths, check live weather and marine conditions, review local traffic
-            data, and rank the three strongest route options.
-        </h3>
-        <p>Built with Flask, Python, JavaScript, HTML, CSS, and a canvas-based world-map overlay.</p>
+    <footer>
+        <div  class="outro-box">
+            <p class="outro-desc">
+                AquaPath AI is a Flask web application that helps compare global maritime
+                shipping routes.
+            </p>
+            <p class="outro-credits">Built with Flask, Python, JavaScript, HTML and CSS.</p>
+        </div>
     </footer>
+    
 </body>
 </html>

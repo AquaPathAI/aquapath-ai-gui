@@ -4,6 +4,7 @@
 
 body {
     background-color: rgb(25, 37, 48);
+    min-height: 100vh;
     margin: 0;
     font-family: "Space Grotesk", sans-serif;
     color: white;
@@ -40,6 +41,12 @@ body {
     object-fit: contain;
 }
 
+.intro-box {
+    width: 100%;
+    padding: 20px 100px;
+
+    box-sizing: border-box;
+}
 
 /* =========================
    HEADINGS
@@ -52,6 +59,125 @@ h2 {
     color: white;
 }
 
+/* =========================
+   PORT GRID
+   ========================= */
+
+.port-grid {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 10px;
+
+    width: 700px;
+    max-width: 90%;
+
+    margin: 30px auto;
+}
+
+
+/* =========================
+   PORT BUTTON
+   ========================= */
+
+.port-button {
+    padding: 12px 8px;
+
+    background: rgb(42, 9, 140);
+
+    border: none;
+    border-radius: 6px;
+
+    color: white;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 14px;
+
+    cursor: pointer;
+
+    /* FIXED SHADOW */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+
+/* Country name inside button */
+
+.port-button span {
+    margin-left: 6px;
+    font-size: 18px;
+}
+
+
+/* =========================
+   PORT HOVER
+   ========================= */
+
+.port-button:hover {
+    transform: scale(1.05);
+
+    font-weight: bold;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+
+/* =========================
+   SELECTED PORT
+   ========================= */
+
+.port-button.selected {
+    transform: scale(1.15);
+
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   CONFIRM PORT BUTTON
+   ========================= */
+
+#input {
+    display: block;
+    margin: 30px auto 0;
+    padding: 12px 20px 15px;
+    background: rgb(11, 11, 140);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#input:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================
+   INPUT CONTAINER
+   ========================= */
+
+.input-container {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+}
 
 /* =========================
    MAP
@@ -203,15 +329,16 @@ h2 {
 }
 
 /* =========================
-   INTRO BOX
+   FOOTER
    ========================= */
 
 footer {
     text-align: center;
-    background: rgb(42, 9, 140);
+    background: rgb(46, 69, 90);
+    font-family: "Inter", sans-serif;
 }
 
-.intro-box {
+.outro-box {
     margin-top: 50px;
     width: 100%;
     padding: 20px;
@@ -219,18 +346,19 @@ footer {
     box-sizing: border-box;
 }
 
-.intro-box h3 {
-    color: white;
-    margin-bottom: 10px;
-}
-
-.intro-box p {
+.outro-box p.outro-desc {
     margin: 0;
     color: #9eeeff;
     font-size: 15px;
     font-weight: 500;
 }
 
+.outro-box p.outro-credits {
+    margin: 8px 0 0;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 400;
+}
 
 /* =========================
    ROUTE SELECTOR
@@ -263,164 +391,8 @@ footer {
 
 
 /* =========================
-   PORT GRID
+   LOADING SCREEN
    ========================= */
-
-.port-grid {
-    display: grid;
-
-    grid-template-columns: repeat(5, 1fr);
-
-    gap: 10px;
-
-    width: 700px;
-    max-width: 90%;
-
-    margin: 30px auto;
-}
-
-
-/* =========================
-   PORT BUTTON
-   ========================= */
-
-.port-button {
-    padding: 12px 8px;
-
-    background: rgb(42, 9, 140);
-
-    border: none;
-    border-radius: 6px;
-
-    color: white;
-
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 14px;
-
-    cursor: pointer;
-
-    /* FIXED SHADOW */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-
-    transition:
-        transform 0.15s ease,
-        box-shadow 0.15s ease;
-}
-
-
-/* Country name inside button */
-
-.port-button span {
-    margin-left: 6px;
-    font-size: 18px;
-}
-
-
-/* =========================
-   PORT HOVER
-   ========================= */
-
-.port-button:hover {
-    transform: scale(1.05);
-
-    font-weight: bold;
-
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-}
-
-
-/* =========================
-   SELECTED PORT
-   ========================= */
-
-.port-button.selected {
-    transform: scale(1.15);
-
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-
-    font-weight: bold;
-}
-
-
-/* =========================
-   CONFIRM PORT BUTTON
-   ========================= */
-
-#input {
-    display: block;
-    margin: 30px auto 0;
-    padding: 12px 20px 15px;
-    background: rgb(11, 11, 140);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-
-    cursor: pointer;
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-#input:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-}
-
-#input {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-}
-/* =========================
-   INPUT
-   ========================= */
-
-.input {
-    background: rgb(42, 9, 140);
-
-    border: none;
-    border-radius: 10px;
-
-    color: white;
-
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 14px;
-
-    cursor: pointer;
-
-    padding: 10px 15px;
-
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-
-    transition:
-        transform 0.15s ease,
-        box-shadow 0.15s ease;
-}
-
-.input:hover {
-    transform: scale(1.05);
-
-    font-weight: bold;
-
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-}
-
-
-/* =========================
-   INPUT CONTAINER
-   ========================= */
-
-.input-container {
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    gap: 10px;
-}
 
 #loading-screen {
     display: none;
