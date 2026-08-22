@@ -61,7 +61,7 @@ function drawWrappedLine(
     start: Point,
     end: Point,
     width: number
-): void {
+) {
     const xDifference = end.x - start.x;
 
     // If the line does not need to wrap, draw it normally.
@@ -82,7 +82,7 @@ function drawWrappedLine(
 }
 
 // Draws the calculated routes and ports on the canvas overlaying the world map.
-function drawRouteMap(result: RouteResult): void {
+function drawRouteMap(result: RouteResult) {
 
     // Set the canvas size to match the world map image, accounting for device pixel ratio for high-DPI displays.
     const mapBounds = worldMap.getBoundingClientRect();
@@ -179,7 +179,7 @@ function drawRouteMap(result: RouteResult): void {
 }
 
 // Creates the three result cards from the JSON returned by the Flask API.
-function showRouteResults(result: RouteResult): void {
+function showRouteResults(result: RouteResult) {
     // Loop through the routes in the result and 
     // create an HTML article for each one, 
     // displaying its rank, score, path, distance, 

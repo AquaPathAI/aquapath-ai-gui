@@ -8,21 +8,25 @@ app = Flask(__name__)
 def home():
     return render_template("Aquapath.html")
 
-
+# For the JavaScript to request a route calculation
 @app.post("/calculate-route")
 def calculate_route_api():
-    # JavaScript sends the two selected ports as JSON; Flask returns JSON results.
+    # Get the JavaScript's request as a dictionary
     data = request.get_json()
 
     try:
+        # Use the calculate_route() function to evaluate the route
         result = calculate_route(
             data["startPort"],
             data["endPort"]
         )
 
+        # Return the result as JSON
         return jsonify(result)
 
+    # Catch errors caused by the route calculation
     except (KeyError, ValueError) as error:
+        # Return the error as JSON
         return jsonify({
             "error": str(error)
         }), 400
