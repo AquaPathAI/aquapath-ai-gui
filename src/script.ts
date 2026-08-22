@@ -1,27 +1,54 @@
+// TypeScript Interfaces
+interface Port {
+    name: string;
+    lat: number;
+    lon: number;
+}
+
+interface Route {
+    rank: number;
+    score: number;
+    path: string[];
+    distance: number;
+    wave_height: number;
+    wind_speed: number;
+    traffic_density: number;
+}
+
+interface RouteResult {
+    ports: Port[];
+    routes: Route[];
+}
+
+interface Point {
+    x: number;
+    y: number;
+}
+
 // Pull DOM elements for later use.
-const ports = document.querySelectorAll(".port-button");
-const inputButton = document.getElementById("input");
-const portGrid = document.querySelector(".port-grid");
-const loadingScreen = document.getElementById("loading-screen");
-const introBox = document.querySelector(".intro-box");
-const routeResults = document.getElementById("route-results");
-const routeList = document.getElementById("route-list");
-const worldMap = document.getElementById("world-map");
-const routeCanvas = document.getElementById("route-canvas");
+const ports = document.querySelectorAll<HTMLButtonElement>(".port-button");
+const inputButton = document.getElementById("input") as HTMLButtonElement;
+const portGrid = document.querySelector<HTMLElement>(".port-grid") as HTMLElement;
+const loadingScreen = document.getElementById("loading-screen") as HTMLElement;
+const introBox = document.querySelector<HTMLElement>(".intro-box") as HTMLElement;
+const routeResults = document.getElementById("route-results") as HTMLElement;
+const routeList = document.getElementById("route-list") as HTMLElement;
+const worldMap = document.getElementById("world-map") as HTMLImageElement;
+const routeCanvas = document.getElementById("route-canvas") as HTMLCanvasElement;
 
 // Variables to track the selected ports and the current stage of the input process.
-let selectedPort = null;
-let startPort = null;
-let endPort = null;
+let selectedPort: HTMLButtonElement | null = null;
+let startPort: string | null = null;
+let endPort: string | null = null;
 
 // Returns the port name from the data-port attribute of the clicked button.
-function getPortName(port) {
+function getPortName(port: HTMLButtonElement): string {
     // data-port avoids sending visual flag emojis to the Python route calculator.
-    return port.dataset.port;
+    return port.dataset.port ?? "";
 }
 
 // This matches the equirectangular projection used by the world-map image.
-function latLonToPixel(latitude, longitude, width, height) {
+function latLonToPixel(latitude: number, longitude: number, width: number, height: number): Point {
     return {
         x: ((longitude + 180) / 360) * width,
         y: ((90 - latitude) / 180) * height
@@ -29,7 +56,12 @@ function latLonToPixel(latitude, longitude, width, height) {
 }
 
 // Draws a line between two points on the canvas, wrapping around the edges if necessary.
-function drawWrappedLine(context, start, end, width) {
+function drawWrappedLine(
+    context: CanvasRenderingContext2D,
+    start: Point,
+    end: Point,
+    width: number
+): void {
     const xDifference = end.x - start.x;
 
     // If the line does not need to wrap, draw it normally.
@@ -50,7 +82,7 @@ function drawWrappedLine(context, start, end, width) {
 }
 
 // Draws the calculated routes and ports on the canvas overlaying the world map.
-function drawRouteMap(result) {
+function drawRouteMap(result: RouteResult): void {
 
     // Set the canvas size to match the world map image, accounting for device pixel ratio for high-DPI displays.
     const mapBounds = worldMap.getBoundingClientRect();
@@ -70,7 +102,11 @@ function drawRouteMap(result) {
     routeCanvas.style.height = `${height}px`;
 
     // Get the drawing function context
-    const context = routeCanvas.getContext("2d");
+    const context: CanvasRenderingContext2D | null = routeCanvas.getContext("2d");
+    if (context === null) {
+        return;
+    }
+
     // Transform the context to account for the pixel ratio
     context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
     // Clear the canvas before drawing new routes
@@ -143,7 +179,7 @@ function drawRouteMap(result) {
 }
 
 // Creates the three result cards from the JSON returned by the Flask API.
-function showRouteResults(result) {
+function showRouteResults(result: RouteResult): void {
     // Loop through the routes in the result and 
     // create an HTML article for each one, 
     // displaying its rank, score, path, distance, 
@@ -287,9 +323,10 @@ inputButton.addEventListener("click", async () => {
         // Log the error to the console for debugging purposes.
         console.error(error);
         // Display an error message on the loading screen to inform the user.
+        const message = error instanceof Error ? error.message : "Unknown error.";
         loadingScreen.innerHTML = `
             <h2>Route calculation failed.</h2>
-            <p>${error.message}</p>
+            <p>${message}</p>
         `;
     }
 });

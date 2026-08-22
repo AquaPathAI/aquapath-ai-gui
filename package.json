@@ -1,0 +1,24 @@
+{
+  "name": "aquapath-ai-gui",
+  "version": "1.0.0",
+  "description": "AquaPath AI is an advanced, terminal-based Python application designed to optimize global maritime shipping routes. By combining **Graph-Based Pathfinding**, **Live API Integration**, and **Machine Learning**, the system calculates the safest and most efficient path between global ports based on physical distance, live weather conditions, and historical traffic density.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AquaPathAI/aquapath-ai-gui.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/AquaPathAI/aquapath-ai-gui/issues"
+  },
+  "homepage": "https://github.com/AquaPathAI/aquapath-ai-gui#readme",
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  }
+}
