@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='utf-8'?>
+<scheme version="2.0" title="" description="">
+	<nodes>
+		<node id="0" name="CSV File Import" qualified_name="Orange.widgets.data.owcsvimport.OWCSVFileImport" project_name="Orange3" version="" title="Traffic Training" position="(-278.0, 119.0)" />
+		<node id="1" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWTable" project_name="Orange3" version="" title="Data Table" position="(-288.0, -40.0)" />
+		<node id="2" name="Column Statistics" qualified_name="Orange.widgets.data.owfeaturestatistics.OWFeatureStatistics" project_name="Orange3" version="" title="Column Statistics" position="(-190.0, -42.0)" />
+		<node id="3" name="Select Columns" qualified_name="Orange.widgets.data.owselectcolumns.OWSelectAttributes" project_name="Orange3" version="" title="Select Columns" position="(-149.0, 122.0)" />
+		<node id="4" name="Linear Regression" qualified_name="Orange.widgets.model.owlinearregression.OWLinearRegression" project_name="Orange3" version="" title="Linear Regression" position="(-35.0, 121.0)" />
+		<node id="5" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWTable" project_name="Orange3" version="" title="Traffic Coefficients" position="(138.0, 119.0)" />
+		<node id="6" name="CSV File Import" qualified_name="Orange.widgets.data.owcsvimport.OWCSVFileImport" project_name="Orange3" version="" title="Weather Training" position="(-282.0, 198.0)" />
+		<node id="7" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWTable" project_name="Orange3" version="" title="Data Table (1)" position="(-293.0, 343.0)" />
+		<node id="8" name="Column Statistics" qualified_name="Orange.widgets.data.owfeaturestatistics.OWFeatureStatistics" project_name="Orange3" version="" title="Column Statistics (1)" position="(-187.0, 342.0)" />
+		<node id="9" name="Select Columns" qualified_name="Orange.widgets.data.owselectcolumns.OWSelectAttributes" project_name="Orange3" version="" title="Select Columns (1)" position="(-149.0, 200.0)" />
+		<node id="10" name="Linear Regression" qualified_name="Orange.widgets.model.owlinearregression.OWLinearRegression" project_name="Orange3" version="" title="Linear Regression (1)" position="(-32.0, 198.0)" />
+		<node id="11" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWTable" project_name="Orange3" version="" title="Weather Coefficients" position="(135.0, 198.0)" />
+	</nodes>
+	<links>
+		<link id="0" source_node_id="0" sink_node_id="1" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="1" source_node_id="0" sink_node_id="2" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="2" source_node_id="3" sink_node_id="4" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="3" source_node_id="4" sink_node_id="5" source_channel="Coefficients" sink_channel="Data" enabled="true" source_channel_id="coefficients" sink_channel_id="data" />
+		<link id="4" source_node_id="6" sink_node_id="7" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="5" source_node_id="6" sink_node_id="8" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="6" source_node_id="6" sink_node_id="9" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="7" source_node_id="9" sink_node_id="10" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="8" source_node_id="10" sink_node_id="11" source_channel="Coefficients" sink_channel="Data" enabled="true" source_channel_id="coefficients" sink_channel_id="data" />
+		<link id="9" source_node_id="0" sink_node_id="3" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+	</links>
+	<annotations />
+	<thumbnail />
+	<node_properties>
+		<properties node_id="0" format="literal">{'_session_items': [], '_session_items_v2': [({'type': 'AbsPath', 'path': 'C:/Users/nikes/Documents/Code/AI/AI Project - Copy/traffic_training.csv'}, {'encoding': 'utf-8', 'delimiter': ',', 'quotechar': '"', 'doublequote': True, 'skipinitialspace': True, 'quoting': 0, 'columntypes': [{'start': 0, 'stop': 2, 'value': 'Auto'}], 'rowspec': [{'start': 0, 'stop': 1, 'value': 'Header'}], 'decimal_separator': '.', 'group_separator': ''}), ({'type': 'AbsPath', 'path': 'C:/Users/nikes/Documents/Code/AI/AI Project - Copy/weather_training.csv'}, {'encoding': 'utf-8', 'delimiter': ',', 'quotechar': '"', 'doublequote': True, 'skipinitialspace': True, 'quoting': 0, 'columntypes': [{'start': 0, 'stop': 3, 'value': 'Auto'}], 'rowspec': [{'start': 0, 'stop': 1, 'value': 'Header'}], 'decimal_separator': '.', 'group_separator': ''})], 'compatibility_mode': False, 'controlAreaVisible': True, 'dialog_state': {'directory': 'C:/Users/nikes/Documents/Code/AI/AI Project - Copy', 'filter': 'Text - comma separated (*.csv, *)'}, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x01\xf4\x00\x00\x00\x96\x00\x00\x03\x0b\x00\x00\x01\xed\x00\x00\x01\xf5\x00\x00\x00\xb4\x00\x00\x03\n\x00\x00\x01\xec\x00\x00\x00\x00\x00\x00\x00\x00\x05\x00\x00\x00\x01\xf5\x00\x00\x00\xb4\x00\x00\x03\n\x00\x00\x01\xec', '__version__': 3}</properties>
+		<properties node_id="1" format="literal">{'auto_commit': True, 'color_by_class': True, 'controlAreaVisible': True, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x00\xef\x00\x00\x00B\x00\x00\x04\x10\x00\x00\x02@\x00\x00\x00\xf0\x00\x00\x00`\x00\x00\x04\x0f\x00\x00\x02?\x00\x00\x00\x00\x00\x00\x00\x00\x05\x00\x00\x00\x00\xf0\x00\x00\x00`\x00\x00\x04\x0f\x00\x00\x02?', 'select_rows': True, 'show_attribute_labels': True, 'show_distributions': False, 'stored_selection': {'rows': [], 'columns': []}, 'stored_sort': [], '__version__': 1}</properties>
+		<properties node_id="2" format="pickle">gASV+QEAAAAAAAB9lCiMC2F1dG9fY29tbWl0lIiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBNzYXZl
+ZFdpZGdldEdlb21ldHJ5lENCAdnQywADAAAAAADVAAAAQgAABCsAAAJAAAAA1gAAAGAAAAQqAAAC
+PwAAAAAAAAAABQAAAADWAAAAYAAABCoAAAI/lIwHc29ydGluZ5RLAIwDc2lwlIwOX3VucGlja2xl
+X2VudW2Uk5SMDFB5UXQ1LlF0Q29yZZSMCVNvcnRPcmRlcpRLAIeUUpSGlIwLX192ZXJzaW9uX1+U
+SwKMEGNvbnRleHRfc2V0dGluZ3OUXZQojBVvcmFuZ2V3aWRnZXQuc2V0dGluZ3OUjAdDb250ZXh0
+lJOUKYGUfZQojAZ2YWx1ZXOUfZQojAljb2xvcl92YXKUTkr+////hpSMDXNlbGVjdGVkX3ZhcnOU
+XZRoDksCdYwKYXR0cmlidXRlc5R9lCiMD1RyYWZmaWNfRGVuc2l0eZRLAowMVHJhZmZpY19SaXNr
+lEsCdYwFbWV0YXOUfZR1YmgTKYGUfZQoaBZ9lChoGE5K/v///4aUaBpdlGgOSwJ1aBx9lCiMDVdh
+dmVfSGVpZ2h0X22USwKMDldpbmRfU3BlZWRfa21olEsCjAxXZWF0aGVyX1Jpc2uUSwJ1aCB9lHVi
+ZXUu
+</properties>
+		<properties node_id="3" format="pickle">gASVaQIAAAAAAAB9lCiMC2F1dG9fY29tbWl0lIiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBNpZ25v
+cmVfbmV3X2ZlYXR1cmVzlImME3NhdmVkV2lkZ2V0R2VvbWV0cnmUQ0IB2dDLAAMAAAAAAVMAAAAG
+AAADrAAAAnwAAAFUAAAAJAAAA6sAAAJ7AAAAAAAAAAAFAAAAAVQAAAAkAAADqwAAAnuUjBJ1c2Vf
+aW5wdXRfZmVhdHVyZXOUiYwLX192ZXJzaW9uX1+USwGMEGNvbnRleHRfc2V0dGluZ3OUXZQojBVv
+cmFuZ2V3aWRnZXQuc2V0dGluZ3OUjAdDb250ZXh0lJOUKYGUfZQojAZ2YWx1ZXOUfZQojBFkb21h
+aW5fcm9sZV9oaW50c5R9lCiMD1RyYWZmaWNfRGVuc2l0eZRLAoaUjAlhdHRyaWJ1dGWUSwCGlIwM
+VHJhZmZpY19SaXNrlEsChpSMBWNsYXNzlEsAhpR1Sv7///+GlGgHSwF1jAphdHRyaWJ1dGVzlH2U
+KIwPVHJhZmZpY19EZW5zaXR5lEsCjAxUcmFmZmljX1Jpc2uUSwJ1jAVtZXRhc5R9lHViaAwpgZR9
+lChoD32UKGgRfZQojA1XYXZlX0hlaWdodF9tlEsChpRoFUsAhpSMDldpbmRfU3BlZWRfa21olEsC
+hpRoFUsBhpSMDFdlYXRoZXJfUmlza5RLAoaUaBlLAIaUdUr+////hpRoB0sBdWgcfZQojA1XYXZl
+X0hlaWdodF9tlEsCjA5XaW5kX1NwZWVkX2ttaJRLAowMV2VhdGhlcl9SaXNrlEsCdWggfZR1YmV1
+Lg==
+</properties>
+		<properties node_id="4" format="literal">{'alpha_index': 0, 'auto_apply': True, 'autosend': True, 'controlAreaVisible': True, 'fit_intercept': True, 'l2_ratio': 0.5, 'learner_name': '', 'reg_type': 0, 'ridge': False, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x01\xd5\x00\x00\x00\x83\x00\x00\x03+\x00\x00\x02\x00\x00\x00\x01\xd6\x00\x00\x00\xa1\x00\x00\x03*\x00\x00\x01\xff\x00\x00\x00\x00\x00\x00\x00\x00\x05\x00\x00\x00\x01\xd6\x00\x00\x00\xa1\x00\x00\x03*\x00\x00\x01\xff', '__version__': 1}</properties>
+		<properties node_id="5" format="literal">{'auto_commit': True, 'color_by_class': True, 'controlAreaVisible': True, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x00\xef\x00\x00\x00B\x00\x00\x04\x10\x00\x00\x02@\x00\x00\x00\xf0\x00\x00\x00`\x00\x00\x04\x0f\x00\x00\x02?\x00\x00\x00\x00\x00\x00\x00\x00\x05\x00\x00\x00\x00\xf0\x00\x00\x00`\x00\x00\x04\x0f\x00\x00\x02?', 'select_rows': True, 'show_attribute_labels': True, 'show_distributions': False, 'stored_selection': {'rows': [], 'columns': []}, 'stored_sort': [], '__version__': 1}</properties>
+		<properties node_id="6" format="literal">{'_session_items': [], '_session_items_v2': [({'type': 'AbsPath', 'path': 'C:/Users/nikes/Documents/Code/AI/AI Project - Copy/weather_training.csv'}, {'encoding': 'utf-8', 'delimiter': ',', 'quotechar': '"', 'doublequote': True, 'skipinitialspace': True, 'quoting': 0, 'columntypes': [{'start': 0, 'stop': 3, 'value': 'Auto'}], 'rowspec': [{'start': 0, 'stop': 1, 'value': 'Header'}], 'decimal_separator': '.', 'group_separator': ''})], 'compatibility_mode': False, 'controlAreaVisible': True, 'dialog_state': {'directory': 'C:/Users/nikes/Documents/Code/AI/AI Project - Copy', 'filter': 'Text - comma separated (*.csv, *)'}, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x01\xf4\x00\x00\x00\x96\x00\x00\x03\x0b\x00\x00\x01\xed\x00\x00\x01\xf5\x00\x00\x00\xb4\x00\x00\x03\n\x00\x00\x01\xec\x00\x00\x00\x00\x00\x00\x00\x00\x05\x00\x00\x00\x01\xf5\x00\x00\x00\xb4\x00\x00\x03\n\x00\x00\x01\xec', '__version__': 3}</properties>
+		<properties node_id="7" format="literal">{'auto_commit': True, 'color_by_class': True, 'controlAreaVisible': True, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x00\xef\x00\x00\x00B\x00\x00\x04\x10\x00\x00\x02@\x00\x00\x00\xf0\x00\x00\x00`\x00\x00\x04\x0f\x00\x00\x02?\x00\x00\x00\x00\x00\x00\x00\x00\x05\x00\x00\x00\x00\xf0\x00\x00\x00`\x00\x00\x04\x0f\x00\x00\x02?', 'select_rows': True, 'show_attribute_labels': True, 'show_distributions': False, 'stored_selection': {'rows': [], 'columns': []}, 'stored_sort': [], '__version__': 1}</properties>
+		<properties node_id="8" format="pickle">gASVpwEAAAAAAAB9lCiMC2F1dG9fY29tbWl0lIiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBNzYXZl
+ZFdpZGdldEdlb21ldHJ5lENCAdnQywADAAAAAADVAAAAQgAABCsAAAJAAAAA1gAAAGAAAAQqAAAC
+PwAAAAAAAAAABQAAAADWAAAAYAAABCoAAAI/lIwHc29ydGluZ5RLAIwDc2lwlIwOX3VucGlja2xl
+X2VudW2Uk5SMDFB5UXQ1LlF0Q29yZZSMCVNvcnRPcmRlcpRLAIeUUpSGlIwLX192ZXJzaW9uX1+U
+SwKMEGNvbnRleHRfc2V0dGluZ3OUXZSMFW9yYW5nZXdpZGdldC5zZXR0aW5nc5SMB0NvbnRleHSU
+k5QpgZR9lCiMBnZhbHVlc5R9lCiMCWNvbG9yX3ZhcpROSv7///+GlIwNc2VsZWN0ZWRfdmFyc5Rd
+lGgOSwJ1jAphdHRyaWJ1dGVzlH2UKIwNV2F2ZV9IZWlnaHRfbZRLAowOV2luZF9TcGVlZF9rbWiU
+SwKMDFdlYXRoZXJfUmlza5RLAnWMBW1ldGFzlH2UdWJhdS4=
+</properties>
+		<properties node_id="9" format="pickle">gASVuQEAAAAAAAB9lCiMC2F1dG9fY29tbWl0lIiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBNpZ25v
+cmVfbmV3X2ZlYXR1cmVzlImME3NhdmVkV2lkZ2V0R2VvbWV0cnmUQ0IB2dDLAAMAAAAAAVMAAAAG
+AAADrAAAAnwAAAFUAAAAJAAAA6sAAAJ7AAAAAAAAAAAFAAAAAVQAAAAkAAADqwAAAnuUjBJ1c2Vf
+aW5wdXRfZmVhdHVyZXOUiYwLX192ZXJzaW9uX1+USwGMEGNvbnRleHRfc2V0dGluZ3OUXZSMFW9y
+YW5nZXdpZGdldC5zZXR0aW5nc5SMB0NvbnRleHSUk5QpgZR9lCiMBnZhbHVlc5R9lCiMEWRvbWFp
+bl9yb2xlX2hpbnRzlH2UKIwNV2F2ZV9IZWlnaHRfbZRLAoaUjAlhdHRyaWJ1dGWUSwCGlIwOV2lu
+ZF9TcGVlZF9rbWiUSwKGlGgVSwGGlIwMV2VhdGhlcl9SaXNrlEsChpSMBWNsYXNzlEsAhpR1Sv7/
+//+GlGgHSwF1jAphdHRyaWJ1dGVzlH2UKGgTSwJoF0sCaBpLAnWMBW1ldGFzlH2UdWJhdS4=
+</properties>
+		<properties node_id="10" format="literal">{'alpha_index': 0, 'auto_apply': True, 'autosend': True, 'controlAreaVisible': True, 'fit_intercept': True, 'l2_ratio': 0.5, 'learner_name': '', 'reg_type': 0, 'ridge': False, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x01\xd5\x00\x00\x00\x83\x00\x00\x03+\x00\x00\x02\x00\x00\x00\x01\xd6\x00\x00\x00\xa1\x00\x00\x03*\x00\x00\x01\xff\x00\x00\x00\x00\x00\x00\x00\x00\x05\x00\x00\x00\x01\xd6\x00\x00\x00\xa1\x00\x00\x03*\x00\x00\x01\xff', '__version__': 1}</properties>
+		<properties node_id="11" format="literal">{'auto_commit': True, 'color_by_class': True, 'controlAreaVisible': True, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x00\xef\x00\x00\x00B\x00\x00\x04\x10\x00\x00\x02@\x00\x00\x00\xf0\x00\x00\x00`\x00\x00\x04\x0f\x00\x00\x02?\x00\x00\x00\x00\x00\x00\x00\x00\x05\x00\x00\x00\x00\xf0\x00\x00\x00`\x00\x00\x04\x0f\x00\x00\x02?', 'select_rows': True, 'show_attribute_labels': True, 'show_distributions': False, 'stored_selection': {'rows': [], 'columns': []}, 'stored_sort': [], '__version__': 1}</properties>
+	</node_properties>
+	<session_state>
+		<window_groups />
+	</session_state>
+</scheme>
