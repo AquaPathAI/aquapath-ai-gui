@@ -26,11 +26,11 @@
 <body>
 
     <header class="header">
-        <div class="logo-title">
+        <a class="logo-title" href="/" aria-label="AquaPath AI home">
             <h1>AquaPath AI</h1>
             <img src="{{ url_for('static', filename='logo.png') }}"
-                 alt="AquaPath AI logo">
-        </div>
+                 alt="">
+        </a>
 
         <div class="intro-box">
             <p>
@@ -60,6 +60,10 @@
             <button class="port-button" data-port="Los Angeles">Los Angeles <span>🇺🇸</span></button>
             <button class="port-button" data-port="Panama Canal">Panama Canal <span>🇵🇦</span></button>
             <button class="port-button" data-port="Santos">Santos <span>🇧🇷</span></button>
+        </div>
+
+        <div class="input-display">
+            <p id="input-display-text"></p>
         </div>
 
         <div class="input-container">

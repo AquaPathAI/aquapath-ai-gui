@@ -5,6 +5,7 @@ const inputButton = document.getElementById("input");
 const portGrid = document.querySelector(".port-grid");
 const loadingScreen = document.getElementById("loading-screen");
 const introBox = document.querySelector(".intro-box");
+const inputDisplay = document.getElementById("input-display-text");
 const routeResults = document.getElementById("route-results");
 const routeList = document.getElementById("route-list");
 const worldMap = document.getElementById("world-map");
@@ -134,9 +135,9 @@ function showRouteResults(result) {
             <p>${route.distance} NM · Waves ${route.wave_height} m · Wind ${route.wind_speed} km/h · Traffic ${route.traffic_density}</p>
         </article>
     `).join("");
-    // Show the route results section and update the loading screen message.
+    // Show the route results section and hide the loading screen
     routeResults.hidden = false;
-    loadingScreen.innerHTML = "<h2>Routes calculated</h2>";
+    loadingScreen.style.display = "none";
     if (worldMap.complete) {
         // If the world map image is already loaded, draw the route map immediately.
         drawRouteMap(result);
@@ -180,6 +181,8 @@ inputButton.addEventListener("click", async () => {
         selectedPort = null;
         // Update the button text to prompt for the end port selection.
         inputButton.textContent = "Choose End Port";
+        // Display the selected port to the user
+        inputDisplay.innerHTML = `<b>Start Port:</b> ${startPort}`;
         // Return to wait for the user to select an end port.
         return;
     }
@@ -204,6 +207,8 @@ inputButton.addEventListener("click", async () => {
         // Unselect the port
         selectedPort.classList.remove("selected");
         selectedPort = null;
+        // Display the selected ports to the user
+        inputDisplay.innerHTML = `<b>Start Port:</b> ${startPort} | <b>End Port:</b> ${endPort}`;
         // Make all the port buttons unclickable to prevent further selection
         ports.forEach((port) => port.disabled = true);
         // Update the button text to indicate that the user can now calculate the route.

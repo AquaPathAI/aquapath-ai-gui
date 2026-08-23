@@ -25,6 +25,8 @@ body {
     align-items: center;
     justify-content: center;
     gap: 15px;
+    text-decoration: none;
+    color: inherit;
 }
 
 .logo-title h1 {
@@ -179,6 +181,20 @@ h2 {
     gap: 10px;
 }
 
+.input-display {
+    display: flex;
+
+    min-height: 0;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.input-display p:empty {
+    display: none;
+}
+
 /* =========================
    MAP
    ========================= */
@@ -226,7 +242,7 @@ h2 {
 #route-results {
     width: 90%;
     max-width: 1200px;
-    margin: 45px auto 0;
+    margin: 30px auto 0;
 }
 
 .route-results-intro {
@@ -397,7 +413,7 @@ footer {
 #loading-screen {
     display: none;
     text-align: center;
-    margin: 50px auto;
+    margin: 20px auto;
     color: white;
 }
 

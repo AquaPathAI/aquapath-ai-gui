@@ -31,6 +31,7 @@ const inputButton = document.getElementById("input") as HTMLButtonElement;
 const portGrid = document.querySelector<HTMLElement>(".port-grid") as HTMLElement;
 const loadingScreen = document.getElementById("loading-screen") as HTMLElement;
 const introBox = document.querySelector<HTMLElement>(".intro-box") as HTMLElement;
+const inputDisplay = document.getElementById("input-display-text") as HTMLParagraphElement;
 const routeResults = document.getElementById("route-results") as HTMLElement;
 const routeList = document.getElementById("route-list") as HTMLElement;
 const worldMap = document.getElementById("world-map") as HTMLImageElement;
@@ -192,9 +193,9 @@ function showRouteResults(result: RouteResult) {
         </article>
     `).join("");
 
-    // Show the route results section and update the loading screen message.
+    // Show the route results section and hide the loading screen
     routeResults.hidden = false;
-    loadingScreen.innerHTML = "<h2>Routes calculated</h2>";
+    loadingScreen.style.display = "none";
 
     if (worldMap.complete) {
         // If the world map image is already loaded, draw the route map immediately.
@@ -243,6 +244,8 @@ inputButton.addEventListener("click", async () => {
         selectedPort = null;
         // Update the button text to prompt for the end port selection.
         inputButton.textContent = "Choose End Port";
+        // Display the selected port to the user
+        inputDisplay.innerHTML = `<b>Start Port:</b> ${startPort}`
         // Return to wait for the user to select an end port.
         return;
     }
@@ -270,6 +273,9 @@ inputButton.addEventListener("click", async () => {
         // Unselect the port
         selectedPort.classList.remove("selected");
         selectedPort = null;
+
+        // Display the selected ports to the user
+        inputDisplay.innerHTML = `<b>Start Port:</b> ${startPort} | <b>End Port:</b> ${endPort}`
 
         // Make all the port buttons unclickable to prevent further selection
         ports.forEach((port) => port.disabled = true);
