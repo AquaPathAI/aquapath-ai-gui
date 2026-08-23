@@ -2,9 +2,6 @@
 
 AquaPath AI is an advanced, terminal-based Python application designed to optimize global maritime shipping routes. By combining **Graph-Based Pathfinding**, **Live API Integration**, and **Machine Learning**, the system calculates the safest and most efficient path between global ports based on physical distance, live weather conditions, and historical traffic density.
 
-
-## Installation & Setup
-
 ## Installation and Setup
 
 ### Prerequisites
@@ -12,7 +9,6 @@ AquaPath AI is an advanced, terminal-based Python application designed to optimi
 Install the following:
 
 - Python 3.10 or later
-- Node.js and npm
 - Git
 
 ### 1. Clone the repository
@@ -22,48 +18,18 @@ git clone https://github.com/AquaPathAI/aquapath-ai-gui.git
 cd aquapath-ai-gui
 ```
 
-### 2. Create a Python virtual environment
+**OR** 
 
-Windows PowerShell:
+Download the Repository if you do not have Git
 
-```powershell
-python -m venv .venv
-.venv\Scripts\Activate.ps1
-```
+### 2. Run the Setup File
 
-macOS/Linux:
-
+**MacOS/Linux**:
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
+bash setup.sh
 ```
 
-### 3. Install Python dependencies
-
-```bash
-pip install Flask requests
+**Windows**:
+```ps1
+.\setup.ps1
 ```
-
-### 4. Install npm dependencies
-
-```bash
-npm install
-```
-
-### 5. Compile the TypeScript code
-
-```bash
-npx tsc
-```
-
-This compiles `src/script.ts` into `static/dist/script.js`, which is loaded by the Flask template.
-
-## Running the Application
-
-Start the Flask development server:
-
-```bash
-python app.py
-```
-
-Open the application in a browser
